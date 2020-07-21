@@ -5,9 +5,9 @@ var inputName = null
 
 function start(){
     inputName = document.querySelector('#inputName');    
-    
+
     preventFormSubmit();
-    activateInput();
+    activateInput();//Função para iniciar a pagina com o focus no campos de input
     
 }
 
