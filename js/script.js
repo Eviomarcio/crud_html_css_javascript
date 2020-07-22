@@ -21,4 +21,15 @@ function preventFormSubmit(){
 
 function activateInput(){
     inputName.focus();
+    inputName.addEventListener('keyup', handleTyping);
+
+    function handleTyping(event){
+        if(event.key === 'Enter'){
+           insertName(event.target.value);
+        }
+    }
+
+    function insertName(newName){
+        globalNames.push(newName);
+    }
 }
