@@ -8,7 +8,7 @@ function start(){
 
     preventFormSubmit();
     activateInput();//Função para iniciar a pagina com o focus no campos de input
-    
+    render();    
 }
 
 function preventFormSubmit(){
@@ -31,5 +31,24 @@ function activateInput(){
 
     function insertName(newName){
         globalNames.push(newName);
+        render();
     }
+}
+
+function render(){
+    //Cria a tag <ul>
+    //Crai a tag <li> conforme o tamanho do vertor glabalNames
+
+    var divNames = document.querySelector('#names');
+    var ul = document.createElement('ul');
+
+    for(var i; i < globalNames.length; i++){
+        var currentName = globalNames[i];
+
+        var li = document.createElement('li');
+        li.textContent = currentName;
+        ul.appendChild(li);
+    }
+
+    divNames.appendChild(ul);
 }
