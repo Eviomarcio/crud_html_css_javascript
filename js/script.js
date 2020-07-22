@@ -40,15 +40,30 @@ function render(){
     //Crai a tag <li> conforme o tamanho do vertor glabalNames
 
     var divNames = document.querySelector('#names');
+    divNames.innerHTML = '';
     var ul = document.createElement('ul');
 
     for(var i; i < globalNames.length; i++){
         var currentName = globalNames[i];
 
         var li = document.createElement('li');
-        li.textContent = currentName;
+
+        var button = document.createElement('button');
+        button.textContent = 'x';
+
+        var span = document.createElement('span');
+        span.textContent = currentName;
+
+        li.appendChild(button);
+        li.appendChild(span);
         ul.appendChild(li);
     }
 
     divNames.appendChild(ul);
+    clearInput();
+}
+
+function clearInput(){
+    inputName.value = '';
+    inputName.focus();
 }
